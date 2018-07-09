@@ -92,7 +92,8 @@ ENV \
 ENV \
 	BOOST_VERSION=${BOOST_MAJOR}.${BOOST_MINOR}.${BOOST_PATCH} \
 	BOOST_DIR=boost_${BOOST_MAJOR}_${BOOST_MINOR}_${BOOST_PATCH} \
-	BOOST_ROOT=/opt/boost
+	BOOST_ROOT=/opt/boost \
+	LD_LIBRARY_PATH=/usr/local/lib
 RUN cd /opt \
 	&& wget "https://dl.bintray.com/boostorg/release/$BOOST_VERSION/source/$BOOST_DIR.tar.bz2" \
 	&& tar xvjf $BOOST_DIR.tar.bz2 \
@@ -116,4 +117,6 @@ RUN cd /opt \
 	&& make install \
 	&& cd /opt \
 	&& rm -rf qt5
-ENV Qt5_DIR=/usr/local/Qt-5.11.1
+ENV \
+	Qt5_DIR=/usr/local/Qt-5.11.1 \
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATHb:/usr/local/Qt-5.11.1/lib/
