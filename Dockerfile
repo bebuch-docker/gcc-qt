@@ -119,4 +119,4 @@ RUN cd /opt \
 	&& rm -rf qt5
 ENV \
 	Qt5_DIR=/usr/local/Qt-5.11.1 \
-	LD_LIBRARY_PATH=$LD_LIBRARY_PATHb:/usr/local/Qt-5.11.1/lib/
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/Qt-5.11.1/lib/
