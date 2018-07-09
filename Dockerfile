@@ -107,6 +107,9 @@ RUN cd $BOOST_ROOT \
 
 
 # install QT
+ENV \
+	Qt5_DIR=/usr/local/Qt-5.11.1 \
+	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/Qt-5.11.1/lib/
 RUN cd /opt \
 	&& git clone https://code.qt.io/qt/qt5.git \
 	&& cd qt5 \
@@ -117,6 +120,3 @@ RUN cd /opt \
 	&& make install \
 	&& cd /opt \
 	&& rm -rf qt5
-ENV \
-	Qt5_DIR=/usr/local/Qt-5.11.1 \
-	LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/Qt-5.11.1/lib/
