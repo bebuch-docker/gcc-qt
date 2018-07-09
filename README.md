@@ -1,4 +1,4 @@
 # gcc-qt
 Contains current version of GCC, GoogleTest, Boost and Qt
 
-    $ docker build --tag bebuch/gcc-qt:latest - < Dockerfile && docker push bebuch/gcc-qt:latest
+    $ docker build --tag bebuch/gcc-qt:latest - < Dockerfile
